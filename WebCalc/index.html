@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCalc</title>
+</head>
+<body>
+
+    <div class="calc">
+        <div class="user-input">
+            <input type="text" id="operation" style="font-size: 22px; border: none; text-align: right;">
+        </div>
+
+        <br>
+        
+        <div class="answer">
+            <input text="text" id="output" style="font-size: 22px; border: none;text-align: right;">
+        </div>
+
+        <br>
+
+        <div class="buttons">
+            <div class="buttons-r1">
+                <input onclick="getButtonInput('(')" type="button" value="(" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput(')')" type="button" value=")" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('%')" type="button" value="%" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('ac')" type="button" value="AC" style="font-size: 15px; padding: 10px 35px; background-color: gainsboro">
+            </div>
+            <br>
+            <div class="buttons-r2">
+                <input onclick="getButtonInput('7')" type="button" value="7" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('8')" type="button" value="8" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('9')" type="button" value="9" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('/')" type="button" value="÷" style="font-size: 20px; padding: 10px 35px; background-color: gainsboro">           </div>
+            <br>
+            <div class="buttons-r3">
+                <input onclick="getButtonInput('4')" type="button" value="4" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('5')" type="button" value="5" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('6')" type="button" value="6" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('*')" type="button" value="×" style="font-size: 20px; padding: 10px 35px; background-color: gainsboro">
+            </div>
+            <br>
+            <div class="buttons-r4">
+                <input onclick="getButtonInput('3')" type="button" value="3" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('2')" type="button" value="2" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('1')" type="button" value="1" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('-')" type="button" value="-" style="font-size: 20px; padding: 10px 35px; background-color: gainsboro">
+            </div>
+            <br>
+            <div class="buttons-r5">
+                <input onclick="getButtonInput('0')" type="button" value="0" style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('.')" type="button" value="." style="font-size: 20px; padding: 10px 35px;">
+                <input onclick="getButtonInput('=')" type="button" value="=" style="font-size: 20px; padding: 10px 35px; background-color: gray;">
+                <input onclick="getButtonInput('+')" type="button" value="+" style="font-size: 20px; padding: 10px 35px; background-color: gainsboro;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let operationDisplay = document.getElementById("operation")
+        let outputDisplay = document.getElementById("output")
+        let operation = ""
+        let isCalculatorEnabled = true
+
+        function getButtonInput(value){
+            switch (value){
+                
+                case '%':
+                    if(isCalculatorEnabled){
+                        operation += "/100"
+                    }
+                    break;
+
+                case "ac":
+                    operation = ""
+                    operationDisplay.value = ""
+                    outputDisplay.value = ""
+                    isCalculatorEnabled = true
+                    break;
+
+                case "=":
+                    if(isCalculatorEnabled){
+                        outputDisplay.value = eval(operation)
+                        operationDisplay.value += "="
+                        isCalculatorEnabled = false
+                    }
+                    break;
+
+                default:
+                    if(isCalculatorEnabled){
+                        operation += value
+                        operationDisplay.value = operation
+                    }
+
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

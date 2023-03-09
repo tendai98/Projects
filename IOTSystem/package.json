@@ -1,0 +1,18 @@
+{
+  "name": "iotsystem",
+  "version": "1.0.0",
+  "description": "test IOT intergration system",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "iot"
+  ],
+  "author": "Tendai Bhebhe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^8.6.7"
+  }
+}

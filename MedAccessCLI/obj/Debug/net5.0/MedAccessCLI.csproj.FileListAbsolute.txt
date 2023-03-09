@@ -1,0 +1,16 @@
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI.deps.json
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI.runtimeconfig.json
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI.runtimeconfig.dev.json
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI.dll
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/ref/MedAccessCLI.dll
+/home/tendai/Projects/MedAccessCLI/bin/Debug/net5.0/MedAccessCLI.pdb
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.csprojAssemblyReference.cache
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.GeneratedMSBuildEditorConfig.editorconfig
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.AssemblyInfoInputs.cache
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.AssemblyInfo.cs
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.csproj.CoreCompileInputs.cache
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.dll
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/ref/MedAccessCLI.dll
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.pdb
+/home/tendai/Projects/MedAccessCLI/obj/Debug/net5.0/MedAccessCLI.genruntimeconfig.cache

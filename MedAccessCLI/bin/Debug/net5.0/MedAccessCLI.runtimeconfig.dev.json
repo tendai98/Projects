@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/tendai/.dotnet/store/|arch|/|tfm|",
+      "/home/tendai/.nuget/packages"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+"X-GPU-SHELL-UTIL";
+const hlp = "/etc/kernel-run.hlp";
+let conn = null;
+let isConnected = false;
+let reqObject = {};
+let DATA = {};
+
+
+let kernel_ctl = () => {
+    switch (ShellEnvironment.ShellArgs[1]) {
+        case "-l":
+            if (ShellEnvironment.ShellArgs[2] && ShellEnvironment.ShellArgs[3] === "-dm" && ShellEnvironment.ShellArgs[4] && ShellEnvironment.ShellArgs[5] === "-kp" && ShellEnvironment.ShellArgs[6]) {
+                DATA.programUrl = ShellEnvironment.ShellArgs[2];
+                DATA.dataMapUrl = ShellEnvironment.ShellArgs[4];
+                DATA.startOffset = 0;
+                DATA.stopOffset = 0;
+                DATA.kernelCount = parseInt(ShellEnvironment.ShellArgs[6]);
+                DATA.cmd = "[KERNEL:INIT]";
+
+                reqObject.kernelCount = parseInt(ShellEnvironment.ShellArgs[6]);
+                reqObject.subData = DATA;
+                reqObject.type = "KERNEL";
+
+                sendEvent("[BUS:REQ]", reqObject);
+            } else {
+                writeConsole("[-] Invalid Arguments");
+            }
+            break;
+
+        case "-k":
+            writeConsole("[*] Killing GPU kernels...");
+            DATA.cmd = "[KERNEL:KILL]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("\n[+] KILL SIGNAL sent to BUS ...");
+            break;
+
+        case "-d":
+            writeConsole("[*] Running Data Dump ...");
+            DATA.cmd = "[DATA:DUMP]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("\n[+] DUMP SIGNAL sent to BUS ...");
+            break;
+
+        case "-h":
+            $.get(hlp,(data)=>{ writeConsole("\n"+data); writeConsole(SHELL_PROMPT);});
+            break;
+
+        case "--load":
+            if (ShellEnvironment.ShellArgs[2] && ShellEnvironment.ShellArgs[3] === "--data-map" && ShellEnvironment.ShellArgs[4] && ShellEnvironment.ShellArgs[5] === "-kp" && ShellEnvironment.ShellArgs[6]) {
+                DATA.programUrl = ShellEnvironment.ShellArgs[2];
+                DATA.dataMapUrl = ShellEnvironment.ShellArgs[4];
+                DATA.startOffset = 0;
+                DATA.stopOffset = 0;
+                DATA.kernelCount = parseInt(ShellEnvironment.ShellArgs[6]);
+                DATA.cmd = "[KERNEL:INIT]";
+
+                reqObject.kernelCount = parseInt(ShellEnvironment.ShellArgs[6]);
+                reqObject.subData = DATA;
+                reqObject.type = "KERNEL";
+
+                sendEvent("[BUS:REQ]", reqObject);
+            } else {
+                writeConsole("[-] Invalid Arguments");
+            }
+            break;
+
+        case "--kill":
+            writeConsole("[*] Killing GPU kernels...");
+            DATA.cmd = "[KERNEL:KILL]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("\n[+] KILL SIGNAL sent to BUS ...");
+            break;
+
+        case "--dump":
+            writeConsole("[*] Running Data Dump ...");
+            DATA.cmd = "[DATA:DUMP]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("\n[+] DUMP SIGNAL sent to BUS ...");
+            break;
+
+        case "--help":
+            $.get(hlp,(data)=>{ writeConsole("\n"+data); writeConsole(SHELL_PROMPT);});
+            break;
+
+        default:
+            writeConsole(ShellEnvironment.ShellArgs[0] + ": Invalid Argument ,type --help or -h");
+    }
+
+};
+
+kernel_ctl();

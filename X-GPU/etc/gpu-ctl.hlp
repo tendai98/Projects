@@ -1,0 +1,9 @@
+gpu-ctl: Allows you to perform simple control and management of the GPU nodes 
+
+--reset:  Reset data buffers and kernel objects.This is also reset data buffer in the bus
+--connect <url> : Reconnect All nodes in X-GPU to a new URL
+--gpu-nodes: View the active GPU nodes and their GPU Node IDs
+--data-dump: Data processed data to a file on the system
+--help: Show this message
+-h: Show this message
+-v: Show version information

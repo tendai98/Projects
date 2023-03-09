@@ -1,0 +1,16 @@
+function KERNEL_FX(KERNEL_DATA) {
+
+  let THREAD_INDEX = this.thread.x;
+  let DATA_INDEX = this.thread.y
+  let number = KERNEL_DATA[THREAD_INDEX][DATA_INDEX];
+  let facts = 0;
+  let c = 0;
+ 
+	if ((number / c) == 0){
+		fact++;
+	}if(fact == 2){
+		return number;
+	}
+  
+}
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GPU Slave Node</title>
+</head>
+
+<script type="text/javascript" src="../lib/EventEmitter.min.js"></script>
+<script type="text/javascript" src="../lib/events.js"></script>
+<script type="text/javascript" src="../lib/gpu.js"></script>
+<script type="text/javascript" src="../lib/jquery-min.js"></script>
+<script type="text/javascript" src="kernelDispatch.js"></script>
+<script type="text/javascript" src="kernelCore.js"></script>
+
+<script type="text/javascript">
+    const BUS_URL = "ws://127.0.0.1:9094";
+    console.log("[*] Connecting to X-BUS @ ( " + BUS_URL + " ) ...");
+    const kernelCore = new GPUKernelCore(BUS_URL);
+</script>
+
+</html>

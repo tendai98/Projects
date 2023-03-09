@@ -1,0 +1,67 @@
+{
+	"detach-module" : "Unload a CERBRUS runtime module",
+	"active-agents" : "Get a list of active module/agents on targets",
+	"run-python" : "Execute Python code using exec() inside CERBRUS",
+	"handler-ctl" : "Deploy a module handler to interact with a module",
+	"probes" : "List module probes that have been received and manage probers",
+	"shell" : "Access the agent/module subshell",
+	"list-sessions" : "List all active session information",
+	"help" : "Get info on commands",
+	"build-module" : "Build or make a module payload",
+	"cleanup" : "Remove junk data from CERBRUS system",
+	"setenv" : "Set an environment variable",
+	"unset" : "Unset data in CERBRUS shell",
+	"load-module" : "Load an attack module",
+	"load-extension" : "Load a CERBRUS System Extension module as a Python module",
+	"run" : "Run a CERBRUS extension module in a thread context",
+	"exit" : "Exit the CERBRUS shell using Python's sys.exit",
+	"printenv" : "Print all Environment variables",
+
+	"synopsis":{
+
+		"detach-module" : "Usage: detach-module <module-id> , detach-module -e <module-id> , detach-module -h <handler-module-id>",
+		"active-agents" : "Usage: active-agents",
+		"run-python" : "Usage: run-python /path/to/code",
+		"handler-ctl" : "Usage: handler-ctl <handler-id> <args>, handler-ctl -l",
+		"probes" : "Usage: probes , probes -p <prober-id> , probes -k <id>",
+		"shell" : "Usage: shell ls -lh",
+		"list-sessions": "Usage: list-sessions",
+		"help" : "Usage: help , help load-module , help usage load-module",
+		"build-module" : "Usage: build <attack-module-name-id> <build-args>",
+		"cleanup" : "Usage: cleanup <probe-id> <module-id> <env-variable>",
+		"setenv" : "Usage: setenv variable <value>",
+		"unset" : "Usage: unset variable",
+		"load-module" : "Usage: load-module [handler|attack] <module-id>",
+		"load-extension" : "Usage: load-extension <module-id>",
+		"run" : "Usage: run <extension-module-name> <args>",
+		"printenv" : "Usage: printenv , printenv variable"
+	},
+
+	"constants":{
+
+		"ALL_SEND_PROBE" : "[SPACCOM]",
+		"UDP_RECV_PROBE" : "[COMMUDP]",
+		"TCP_RECV_PROBE" : "[COMMTCP]",
+		"RDB_RECV_PROBE" : "[COMMRDB]",
+
+		"LOCK" : 1,
+		"ULCK" : 2,
+		"TCP_CONN" : 5,
+		"SOCK_CLOS" : 6,
+		"INIT" : 7,
+
+		"TCP_RECV" : 3,
+		"TCP_SEND" : 4,
+		"UDP_RECV" : 8,
+		"UDP_SEND" : 9,
+		"RESET_NET" : 10,
+		"EXCEPTION_CODE" : 272,
+
+		"TCP_COMM_MODE" : 104,
+		"UDP_COMM_MODE" : 105,
+		"UDDP_COMM_MODE" : 106,
+		"SCTP_COMM_MODE" : 107
+
+	}
+
+}

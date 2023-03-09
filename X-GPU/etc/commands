@@ -1,0 +1,7 @@
+                        [X-GPU SHELL COMMANDS]
+
+gpu-ctl     ->>>>>>     Control and management of GPU Node
+clear       ->>>>>>     Clear the console screen
+help        ->>>>>>     Show this message
+history     ->>>>>>     Access command history
+kernel-run  ->>>>>>     Execute multiple GPU Kernels on XGPU

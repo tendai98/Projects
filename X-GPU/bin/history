@@ -1,0 +1,35 @@
+"X-GPU-SHELL-UTIL";
+
+let main = () => {
+    let commandHistory = "";
+
+    switch (ShellEnvironment.ShellArgs[1]) {
+        case "-c":
+            ShellEnvironment = { ShellArgs: [], ShellHistory: {}, LastCommand: [] };
+            CommandIndex = 0;
+            break;
+
+        case "--clear":
+            ShellEnvironment = { ShellArgs: [], ShellHistory: {}, LastCommand: [] };
+            CommandIndex = 0;
+            break;
+
+        default:
+            writeConsole(" ------------ [X-GPU Shell Command History] -------------\n");
+            if (ShellEnvironment.ShellHistory.hasOwnProperty(0)) {
+                for (let index in ShellEnvironment.ShellHistory) {
+                    commandHistory += index + ": ";
+                    for (let i in ShellEnvironment.ShellHistory[parseInt(index)]) {
+                        commandHistory += ShellEnvironment.ShellHistory[parseInt(index)][parseInt(i)] + " ";
+                    }
+                    commandHistory += "\n";
+                }
+                writeConsole(commandHistory);
+                writeConsole("\n ------------ [X-GPU Shell Command History] -------------\n");
+            } else {
+                writeConsole("[!] No command history");
+            }
+        }
+    };
+
+main();

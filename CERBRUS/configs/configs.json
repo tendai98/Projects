@@ -1,0 +1,11 @@
+{
+    "shellPrompts": {
+        "mainShell": "[MAIN]:[CERBRUS]://> ",
+        "cmdShell": "[CMD]:[MODE]://> ",
+        "moduleShell": "[ATTACK]:[MODE]://# "
+    },
+
+    "keys": {
+        "z3r0": "SFOxEwE1dzrTsXGjASTnOLSRG8zaV25_B1GeGuC2r-8="
+    }
+}

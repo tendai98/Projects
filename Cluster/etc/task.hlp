@@ -1,0 +1,10 @@
+task: Allows user to run tasks on multiple nodes and also get data after execution
+
+-l,--load <programPath> : path to algorithm or program to execute 
+-dm,--data-map,--dump <dataMapPath> : path to algorithm's data map file (JSON) which is required for execution
+-tp <thread/node> : Value used to control the thread:processor ratio.
+-d,--dump : Dump flag is used to push data to X-BUS via a WebSocket.The data can later be commited to a file
+-h,--help : Show this message
+
+ task -l /data/primes/primes.js -dm /data/primes/data_map.json -tp 20
+

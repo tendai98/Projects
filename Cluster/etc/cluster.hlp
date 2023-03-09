@@ -1,0 +1,9 @@
+cluster-ctl: Allows you to perform simple control and management of the Cluster
+
+--reset:  Reset data buffers and thread objects.This is also reset data buffer in the bus
+--cpu-nodes: View the active processor nodes and their TIDs
+--connect: Reconnect Processor Nodes to URL <http://host:port>
+--file-dump: Data processed data to a file on the system
+--help: Show this message
+-h: Show this message
+-v: Show version information

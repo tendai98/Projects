@@ -1,0 +1,4 @@
+port-speeds -  Serial (UART) port baudrates
+enable-delim - Enable the transmission of a line delimiter
+disable-delim - Disable the transmission of a line delimiter
+help - show this message

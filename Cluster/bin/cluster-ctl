@@ -1,0 +1,84 @@
+"CLUSTER-SHELL-UTIL";
+const ver = "/etc/cluster.ver";
+const hlp = "/etc/cluster.hlp";
+let DATA = {};
+let reqObject = {};
+
+let cluster = () => {
+
+    switch (ShellEnvironment.ShellArgs[1]) {
+        case "-v":
+            $.get(ver, (data) => {
+                writeConsole("\n" + data);
+                writeConsole(SHELL_PROMPT);
+            });
+            break;
+
+        case "-h":
+            $.get(hlp, (data) => {
+                writeConsole("\n" + data);
+                writeConsole(SHELL_PROMPT);
+            });
+            break;
+
+        case "--reset":
+            DATA.cmd = "[RESET:BUFFERS]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("[+] [RESET:BUFFER] SIGNAL sent to BUS ...");
+            DATA.cmd = "[FLUSH:THREADS]";
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("\n[+] [FLUSH:THREAD] SIGNAL sent to BUS ...");
+            break;
+
+        case "--connect":
+         if (ShellEnvironment.ShellArgs[2]){
+            DATA.cmd = "[NODES:CONNECT]";
+            DATA.url = ShellEnvironment.ShellArgs[2];
+            reqObject.subData = DATA;
+            reqObject.type = "CMD";
+            sendEvent("[BUS:REQ]", reqObject);
+            writeConsole("[+] [NODES:CONNECT] SIGNAL sent to BUS ..\n");
+            writeConsole("[*] Reconnecting all nodes to "+ShellEnvironment.ShellArgs[2]);
+         }
+         else{
+             writeConsole("[!] Invalid Argument : No url given");
+         }
+            break;
+     
+        case "--cpu-nodes":
+            DATA.cmd = "[GET:NODES]";
+            reqObject.subData = DATA;
+            reqObject.type = "GET-NODES";
+            sendEvent("[BUS:REQ]", reqObject);
+            break;
+
+        case "--data-dump":
+            if (ShellEnvironment.ShellArgs[2]){
+                writeConsole("[*] Sending [DATA:DUMP] SIGNAL to BUS ....");
+                reqObject.type = "DUMP";
+                reqObject.path = ShellEnvironment.ShellArgs[2];
+                sendEvent("[BUS:REQ]", reqObject);
+                break;
+            }else{
+                writeConsole("[x] Invalid File Path argument");
+            }
+            break;
+
+        case "--help":
+            $.get(hlp, (data) => {
+                writeConsole("\n" + data);
+                writeConsole(SHELL_PROMPT);
+            });
+            break;
+
+        default:
+            writeConsole(ShellEnvironment.ShellArgs[0] + ": Invalid argument, type '--help or -h '");
+            break;
+    }
+};
+
+cluster();

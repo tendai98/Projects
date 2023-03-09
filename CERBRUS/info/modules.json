@@ -1,0 +1,26 @@
+{
+
+	"attack":{
+		"z3r0":{
+			"build":"build.sh",
+			"dir":"modules/z3r0/",
+			"key":"SFOxEwE1dzrTsXGjASTnOLSRG8zaV25_B1GeGuC2r-8="
+		}
+	},
+
+	"handler":{
+		"z3r0-handler":{
+				"handler":"z3r0_handler.py",
+				"dir":"core/handlers/",
+				"id":"z3r0-handler",
+				"attackModule":"z3r0"
+		}
+	},
+
+	"cerbrusExtensions":{
+		"hexdump":"core/extensions/hexdump.py",
+		"prober":"core/extensions/prober.py",
+		"prober-mon":"core/extensions/prober_mon.py",
+		"command-tunnel":"core/extensions/command-tunnel.py"
+	}
+}

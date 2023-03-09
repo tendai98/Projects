@@ -1,0 +1,11 @@
+"X-GPU-SHELL-UTIL";
+const datafile = "/etc/commands";
+
+let help = ()=>{
+            $.get(datafile, (data) => {
+                writeConsole("\n" + data);
+                writeConsole(SHELL_PROMPT);
+            });
+}
+
+help();

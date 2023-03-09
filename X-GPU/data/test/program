@@ -1,0 +1,7 @@
+function KERNEL_FX(KERNEL_DATA) {
+
+  let THREAD_INDEX = this.thread.x;
+  let DATA_INDEX = this.thread.y
+  let value = KERNEL_DATA[THREAD_INDEX][DATA_INDEX] * 3;
+  return value;
+}

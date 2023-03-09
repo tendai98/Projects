@@ -1,0 +1,10 @@
+kernel-run: Allows user to run kernels on multiple nodes and also get data after execution
+
+-l,--load <programPath> : path to algorithm or program to execute 
+-dm,--data-map,--dump <dataMapPath> : path to algorithm's data map file (JSON) which is required for execution
+-kp <kernel/node> : Value used to control the kernel:gpu ratio.
+-d,--dump : Dump flag is used to push data to X-BUS via WebSocket.The data can later be commited to a file
+-h,--help : Show this message
+
+ kernel-run -l /data/test/program -dm /data/primes/data_map.json -kp 20
+
